@@ -13,7 +13,6 @@ class BotManager:
 
     async def handle_updates(self, updates: list[Update]):
         for update in updates:
-            print("update")
             if update.type == "message_new":
                 task = asyncio.create_task(
                     self.app.store.vk_api.send_message(
