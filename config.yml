@@ -1,0 +1,21 @@
+session:
+  key: t8BAvb1SagRDW86gv7TR4GVYvFIcbctqMkbsFmlDoLM=
+admin:
+  email: admin@admin.com
+  password: admin
+database:
+  user: postgres
+  password: 123
+  host: postgres
+  port: 5432
+  database: kts
+redis:
+  host: redis
+  port: 6379
+  db: 0
+bot:
+  token: vk1.a.EZ8xH2njUXSPhHAG2ZcqxnN8kKeJGqNw8Eh9AupviXAzvC_3ma65iuuvLCsEf8WcS0ngKWJDKfAuJ5aj2ALgj3arxmvMrx2xIfy1gq3bS-PKI_i722ZFYXMa8wJjKIndxrbyrILJVSMp3g1ynVA309EvoXUmvXD5Wp6xQSprXraf6Vr9lQpaksu69fz9xi9FdbKXy03fH0nkuoiVfyiAag
+  group_id: 52153280
+logger:
+  name: vkGame
+  file: kts_backend/logger/log.log
