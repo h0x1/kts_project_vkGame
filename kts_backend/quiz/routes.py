@@ -1,6 +1,6 @@
 import typing
 
-from kts_backend.quiz.views import (
+from app.quiz.views import (
     ThemeAddView,
     ThemeListView,
     QuestionAddView,
@@ -8,7 +8,7 @@ from kts_backend.quiz.views import (
 )
 
 if typing.TYPE_CHECKING:
-    from kts_backend.web.app import Application
+    from app.web.app import Application
 
 
 def setup_routes(app: "Application"):

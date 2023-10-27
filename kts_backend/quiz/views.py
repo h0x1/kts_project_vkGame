@@ -6,8 +6,8 @@ from aiohttp_apispec import (
     querystring_schema,
 )
 
-from kts_backend.admin.decorators import auth_required
-from kts_backend.quiz.schemes import (
+from app.admin.decorators import auth_required
+from app.quiz.schemes import (
     ThemeRequestSchema,
     ThemeListResponseSchema,
     QuestionRequestSchema,
@@ -16,8 +16,8 @@ from kts_backend.quiz.schemes import (
     QuestionListResponseSchema,
     QuestionRequestQuerySchema,
 )
-from kts_backend.web.app import View
-from kts_backend.web.utils import json_response
+from app.web.app import View
+from app.web.utils import json_response
 
 
 class ThemeAddView(View):
@@ -69,13 +69,13 @@ class QuestionAddView(View):
             self.data["theme_id"],
             self.data["answers"],
         )
-
+        print("sss3")
         if await self.store.quizzes.get_question_by_title(title) is not None:
             raise HTTPConflict
-
+        print("sss2")
         if await self.store.quizzes.get_theme_by_id(theme_id) is None:
             raise HTTPNotFound
-
+        print("sss")
         question = await self.store.quizzes.create_question(
             title, theme_id, answers
         )

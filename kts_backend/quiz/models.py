@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, String, BigInteger, Boolean, ForeignKey
-from kts_backend.database.sqlalchemy_base import db
+from app.store.database.sqlalchemy_base import db
 
 
 @dataclass
