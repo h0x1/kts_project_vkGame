@@ -4,7 +4,7 @@ from dataclasses import dataclass
 import yaml
 
 if typing.TYPE_CHECKING:
-    from kts_backend.web.app import Application
+    from app.web.app import Application
 
 
 @dataclass
@@ -26,6 +26,11 @@ class DatabaseConfig:
     password: str
     database: str
 
+@dataclass
+class RedisConfig:
+    host: str
+    port: int
+    db: int
 
 @dataclass
 class BotConfig:
@@ -46,6 +51,7 @@ class Config:
     bot: BotConfig = None
     database: DatabaseConfig = None
     logger: LoggerConfig = None
+    redis: RedisConfig = None
 
 
 def setup_config(app: "Application", config_path: str):
@@ -66,4 +72,5 @@ def setup_config(app: "Application", config_path: str):
         ),
         database=DatabaseConfig(**raw_config["database"]),
         logger=LoggerConfig(**raw_config["logger"]),
+        redis=RedisConfig(**raw_config["redis"]),
     )

@@ -10,10 +10,10 @@ from aiohttp.web_middlewares import middleware
 from aiohttp_apispec import validation_middleware
 from aiohttp_session import get_session
 
-from kts_backend.web.utils import error_json_response
+from app.web.utils import error_json_response
 
 if typing.TYPE_CHECKING:
-    from kts_backend.web.app import Application, Request
+    from app.web.app import Application, Request
 
 HTTP_ERROR_CODES = {
     400: "bad_request",
