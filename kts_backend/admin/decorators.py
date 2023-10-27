@@ -3,7 +3,7 @@ from functools import wraps
 from aiohttp.web_exceptions import HTTPForbidden, HTTPUnauthorized
 from aiohttp_session import get_session
 
-from kts_backend.web.app import View
+from app.web.app import View
 
 
 def auth_required(wrapped_func):

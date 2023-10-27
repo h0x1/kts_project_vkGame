@@ -1,12 +1,14 @@
 import typing
-from kts_backend.admin.views import AdminCurrentView
+from app.admin.views import AdminCurrentView
 
 if typing.TYPE_CHECKING:
-    from kts_backend.web.app import Application
+    from app.web.app import Application
 
 
 def setup_routes(app: "Application"):
-    from kts_backend.admin.views import AdminLoginView
+    from app.admin.views import AdminLoginView
+    from app.admin.views import AdminCreateView
 
     app.router.add_view("/admin.login", AdminLoginView)
     app.router.add_view("/admin.current", AdminCurrentView)
+    app.router.add_view("/admin.create", AdminCreateView)

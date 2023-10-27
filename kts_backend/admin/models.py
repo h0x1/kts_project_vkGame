@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from typing import Optional
 from sqlalchemy import Column, String, BigInteger
 
-from kts_backend.database.sqlalchemy_base import db
+from app.store.database.sqlalchemy_base import db
 
 
 @dataclass
