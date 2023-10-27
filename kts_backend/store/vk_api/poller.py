@@ -2,7 +2,7 @@ import asyncio
 from asyncio import Task
 from typing import Optional
 
-from kts_backend.store import Store
+from app.store import Store
 
 
 class Poller:
@@ -13,7 +13,7 @@ class Poller:
     def __init__(self, store: Store):
         self.store = store
         self.is_running = False
-        self.poll_task: Task | None = None
+        self.poll_task: Task = None
 
     async def start(self):
         self.tasklist = [asyncio.create_task(self.poll())]

@@ -3,17 +3,17 @@ import typing
 from hashlib import sha256
 from typing import Optional
 from sqlalchemy import select
-from kts_backend.base.base_accessor import BaseAccessor
-from kts_backend.admin.models import Admin, AdminModel
-from kts_backend.admin.models import Admin
+from app.base.base_accessor import BaseAccessor
+from app.admin.models import Admin, AdminModel
 import bcrypt
 
 if typing.TYPE_CHECKING:
-    from kts_backend.web.app import Application
+    from app.web.app import Application
 
 
 class AdminAccessor(BaseAccessor):
-    async def get_by_email(self, email: str) -> Admin | None:
+
+    async def get_by_email(self, email: str) -> Admin:
         async with self.app.database.session() as session:
             admin = (
                 await session.execute(
