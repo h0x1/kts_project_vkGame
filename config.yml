@@ -6,9 +6,9 @@ admin:
 database:
   user: postgres
   password: 123
-  host: postgres
+  host: localhost
   port: 5432
-  database: kts
+  database: postgres
 redis:
   host: redis
   port: 6379
@@ -18,4 +18,4 @@ bot:
   group_id: 52153280
 logger:
   name: vkGame
-  file: kts_backend/logger/log.log
+  file: app/logger/log.log

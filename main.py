@@ -1,6 +1,6 @@
 import os
 
-from kts_backend.web.app import setup_app
+from app.web.app import setup_app
 from aiohttp.web import run_app
 
 if __name__ == "__main__":
